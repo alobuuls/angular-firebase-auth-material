@@ -1,27 +1,197 @@
-# AngularLoginFirebase2
+# 🚀 Angular Firebase Auth Material
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Aplicación desarrollada en **Angular 16** que implementa un sistema completo de autenticación utilizando **Firebase Authentication**, **Angular Material** y **Route Guards**.
 
-## Development server
+Incluye autenticación con correo y contraseña, inicio de sesión con proveedores externos y protección de rutas privadas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Requisitos del sistema
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de ejecutar el proyecto asegúrate de instalar:
 
-## Build
+- 📦 **Node.js:** `v18+` *(preferiblemente v18.10.0)*
+- 📦 **npm:** `v9+`
+- 🅰️ **Angular CLI:** `v16.x`
+- 🔥 **Cuenta activa en Firebase**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🔍 Verificar versiones instaladas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+node -v
+npm -v
+ng version
+```
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Instalación del proyecto
 
-## Further help
+### 1️⃣ Clonar repositorio
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone <URL_DEL_REPO>
+cd angular-firebase-auth-material
+```
+
+### 2️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## 🔥 Configurar Firebase
+
+Crear proyecto en Firebase y reemplazar:
+
+```ts
+export const environment = {
+ firebase:{
+   apiKey:"",
+   authDomain:"",
+   projectId:"",
+   appId:"",
+ }
+}
+```
+
+Habilitar:
+
+- Email / Password Authentication
+- Google Provider
+- Github Provider
+
+Desde:
+
+```txt
+Firebase → Authentication → Sign-in method
+```
+
+---
+
+## ▶️ Ejecutar proyecto
+
+```bash
+ng serve
+```
+
+Abrir:
+
+```bash
+http://localhost:4200
+```
+
+---
+
+## 🧠 Arquitectura del proyecto
+
+Estructura basada en módulos y servicios desacoplados.
+
+### 🔐 Auth
+
+Contiene:
+
+- Login
+- Registro
+- Social Login
+- Logout
+
+### 🛡️ Guards
+
+Protección de rutas:
+
+- `authGuard`
+- `publicGuard`
+
+### 🔥 Firebase Services
+
+Manejo centralizado de:
+
+- Registro
+- Login
+- Estado del usuario
+- Providers externos
+- Logout
+
+---
+
+## ⚙️ Funcionalidades principales
+
+- 🔑 Login Email/Password
+- 📝 Registro de usuarios
+- 🔥 Firebase Authentication
+- 🛡️ Protección de rutas
+- 🌐 Login con Google
+- 🐙 Login con Github
+- 🚪 Logout
+- 💬 Snackbars con Angular Material
+- 👤 Estado global de autenticación
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- 🅰️ Angular 16
+- 🔥 Firebase Authentication
+- ⚡ TypeScript
+- 🎨 Angular Material
+- 🧩 Reactive Forms
+- 🛡️ Route Guards
+- 🔄 RxJS
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/app
+├── core/
+│   ├── guards/
+│   └── services/
+│
+├── pages/
+│   ├── auth/
+│   │   ├── login/
+│   │   ├── register/
+│   │   └── components/
+│   │
+│   └── home/
+│
+├── firebase.config.ts
+├── app-routing.ts
+└── app.config.ts
+```
+
+---
+
+## 🔥 Conceptos aprendidos
+
+Este proyecto practica:
+
+- Firebase Authentication
+- Route Guards
+- Protección de rutas
+- Social Providers
+- Reactive Forms
+- Angular Material
+- Observables
+- Authentication State
+- Standalone Components
+
+---
+
+## 📄 Licencia
+
+Proyecto educativo desarrollado para practicar autenticación moderna con Angular + Firebase.
+
+---
+
+# 🚀 Commit sugerido README
+
+```bash
+📝 docs: add README with Firebase authentication setup and usage guide
+```
