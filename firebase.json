@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "angular-login-firebase-2",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

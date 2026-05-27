@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "login-firebase-2-69ff3": {
+      "hosting": {
+        "angular-login-firebase-2": [
+          "login-firebase-2-69ff3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "login-firebase-2-69ff3"
+  }
+}
