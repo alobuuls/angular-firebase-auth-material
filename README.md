@@ -189,9 +189,4 @@ Este proyecto practica:
 Proyecto educativo desarrollado para practicar autenticación moderna con Angular + Firebase.
 
 ---
-
-# 🚀 Commit sugerido README
-
-```bash
-📝 docs: add README with Firebase authentication setup and usage guide
 ```
