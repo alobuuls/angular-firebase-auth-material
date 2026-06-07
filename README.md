@@ -1,23 +1,76 @@
-# 🚀 Angular Firebase Auth Material
+<h1 align="center">🔥 Angular Firebase Auth Material</h1>
 
-Aplicación desarrollada en **Angular 16** que implementa un sistema completo de autenticación utilizando **Firebase Authentication**, **Angular Material** y **Route Guards**.
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-16-DD0031?logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/Firebase-Authentication-FFCA28?logo=firebase&logoColor=black" alt="Firebase" />
+  <img src="https://img.shields.io/badge/Angular_Material-UI-757575?logo=angular&logoColor=white" alt="Angular Material" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen" alt="Completed" />
+</p>
 
-Incluye autenticación con correo y contraseña, inicio de sesión con proveedores externos y protección de rutas privadas.
+<p align="center">
+  <a href="https://github.com/alobuuls/angular-firebase-auth-material" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white" alt="Repository" /></a>
+  <a href="https://github.com/alobuuls/angular-firebase-auth-material/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/alobuuls/angular-firebase-auth-material?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/alobuuls/angular-firebase-auth-material/commits/main" target="_blank"><img src="https://img.shields.io/github/last-commit/alobuuls/angular-firebase-auth-material" alt="Last Commit" /></a>
+</p>
 
 ---
 
-## ⚙️ Requisitos del sistema
+## 📑 Table of Contents
 
-Antes de ejecutar el proyecto asegúrate de instalar:
+* [🔥 Angular Firebase Auth Material](#-angular-firebase-auth-material)
 
-- 📦 **Node.js:** `v18+` *(preferiblemente v18.10.0)*
-- 📦 **npm:** `v9+`
+  * [🌐 Live Demo](#-live-demo)
+  * [📖 Description](#-description)
+  * [⚙️ System Requirements](#️-system-requirements)
+  * [🚀 Project Installation](#-project-installation)
+  * [🔥 Firebase Configuration](#-firebase-configuration)
+  * [▶️ Run the Project](#️-run-the-project)
+  * [🧠 Project Architecture](#-project-architecture)
+  * [✨ Features](#-features)
+  * [🛠 Technologies Used](#-technologies-used)
+  * [📁 Project Structure](#-project-structure)
+  * [🔥 Best Practices Implemented](#-best-practices-implemented)
+  * [🎯 Project Goal](#-project-goal)
+  * [📄 License](#-license)
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://alobuuls.github.io/angular-firebase-auth-material/
+
+---
+
+## 📖 Description
+
+> [!NOTE]
+> An Angular 16 application that implements a complete authentication system using Firebase Authentication, Angular Material, Route Guards, and Standalone Components.
+
+The project demonstrates authentication with email and password, social login providers, protected routes, reactive forms, authentication state management, and modern Angular architecture practices.
+
+---
+
+## ⚙️ System Requirements
+
+Before running the project, make sure you have installed:
+
+- 📦 **Node.js:** `v16.14.x – v18.x` *(recommended: v18.10.0 LTS)*
+- 📦 **npm:** `v8+`
 - 🅰️ **Angular CLI:** `v16.x`
-- 🔥 **Cuenta activa en Firebase**
+- 🔥 **Firebase Project**
+
+## Recommended using nvm
+
+```bash
+nvm install 18
+nvm use 18
+```
 
 ---
 
-## 🔍 Verificar versiones instaladas
+## 🔍 Verify Installed Versions
+
+Run the following commands in your terminal:
 
 ```bash
 node -v
@@ -27,16 +80,17 @@ ng version
 
 ---
 
-## 🚀 Instalación del proyecto
+## 🚀 Project Installation
 
-### 1️⃣ Clonar repositorio
+### 1️⃣ Clone the repository
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone git@github.com:alobuuls/angular-firebase-auth-material.git
+
 cd angular-firebase-auth-material
 ```
 
-### 2️⃣ Instalar dependencias
+### 2️⃣ Install dependencies
 
 ```bash
 npm install
@@ -44,149 +98,215 @@ npm install
 
 ---
 
-## 🔥 Configurar Firebase
+## 🔥 Firebase Configuration
 
-Crear proyecto en Firebase y reemplazar:
+Create a Firebase project and replace the configuration inside:
+
+```ts
+src/environments/environment.ts
+```
 
 ```ts
 export const environment = {
- firebase:{
-   apiKey:"",
-   authDomain:"",
-   projectId:"",
-   appId:"",
- }
-}
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    appId: '',
+  },
+};
 ```
 
-Habilitar:
+Enable the following providers:
 
-- Email / Password Authentication
-- Google Provider
-- Github Provider
+* Email / Password Authentication
+* Google Authentication Provider
+* GitHub Authentication Provider
 
-Desde:
+From:
 
-```txt
-Firebase → Authentication → Sign-in method
+```text
+Firebase Console
+→ Authentication
+→ Sign-in method
 ```
 
 ---
 
-## ▶️ Ejecutar proyecto
+## ▶️ Run the Project
+
+Start the development server:
 
 ```bash
 ng serve
 ```
 
-Abrir:
+Then open:
 
-```bash
+```text
 http://localhost:4200
 ```
 
 ---
 
-## 🧠 Arquitectura del proyecto
+## 🧠 Project Architecture
 
-Estructura basada en módulos y servicios desacoplados.
+The application follows a scalable architecture based on Standalone Components, Route Guards, and centralized authentication services.
 
-### 🔐 Auth
+### 🔥 Auth Service
 
-Contiene:
+Responsible for:
 
-- Login
-- Registro
-- Social Login
-- Logout
+* User registration
+* User login
+* Social authentication
+* Authentication state management
+* Logout functionality
 
-### 🛡️ Guards
+### 🛡️ Auth Guard
 
-Protección de rutas:
+Responsible for:
 
-- `authGuard`
-- `publicGuard`
+* Route protection
+* Access control
+* Authentication validation
+* Navigation restrictions
 
-### 🔥 Firebase Services
+### 📄 Authentication Pages
 
-Manejo centralizado de:
+Responsible for:
 
-- Registro
-- Login
-- Estado del usuario
-- Providers externos
-- Logout
+* Login form
+* Registration form
+* User interaction
+* Authentication workflows
 
----
+### 🎨 Shared Components
 
-## ⚙️ Funcionalidades principales
+Responsible for:
 
-- 🔑 Login Email/Password
-- 📝 Registro de usuarios
-- 🔥 Firebase Authentication
-- 🛡️ Protección de rutas
-- 🌐 Login con Google
-- 🐙 Login con Github
-- 🚪 Logout
-- 💬 Snackbars con Angular Material
-- 👤 Estado global de autenticación
+* Social login buttons
+* UI consistency
+* Reusable authentication actions
 
----
+### 🏠 Home Page
 
-## 🛠️ Tecnologías utilizadas
+Responsible for:
 
-- 🅰️ Angular 16
-- 🔥 Firebase Authentication
-- ⚡ TypeScript
-- 🎨 Angular Material
-- 🧩 Reactive Forms
-- 🛡️ Route Guards
-- 🔄 RxJS
+* Protected content
+* Authenticated user access
+* Logout actions
 
 ---
 
-## 📁 Estructura del proyecto
+## ✨ Features
 
-```bash
-src/app
-├── core/
-│   ├── guards/
-│   └── services/
+* 🔑 Email & Password Authentication
+* 📝 User Registration
+* 🔥 Firebase Authentication Integration
+* 🌐 Google Sign-In
+* 🐙 GitHub Sign-In
+* 🛡️ Route Protection with Guards
+* 🚪 Logout Functionality
+* 🎨 Angular Material UI
+* 📋 Reactive Forms
+* 👤 Authentication State Management
+* ⚡ Standalone Components
+* 🚀 Modern Angular Architecture
+
+---
+
+## 🛠 Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Angular 16 | Front-End Framework |
+| TypeScript | Application Logic |
+| Firebase Authentication | User Authentication |
+| Angular Material | UI Components |
+| Reactive Forms | Form Management |
+| RxJS | Reactive Programming |
+| Route Guards | Route Protection |
+| Standalone Components | Modular Architecture |
+
+---
+
+## 📁 Project Structure
+
+```text
+angular-firebase-auth-material/
+
+├── src/
 │
-├── pages/
-│   ├── auth/
-│   │   ├── login/
-│   │   ├── register/
-│   │   └── components/
+├── app/
+│   ├── core/
+│   │   ├── guards/
+│   │   │   ├── auth.guard.ts
+│   │   │   └── index.ts
+│   │   │
+│   │   └── services/
+│   │       └── auth.service.ts
 │   │
-│   └── home/
+│   ├── pages/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   ├── register/
+│   │   │   └── components/
+│   │   │       └── button-providers/
+│   │   │
+│   │   └── home/
+│   │
+│   ├── firebase.config.ts
+│   ├── app-routing.ts
+│   └── app.config.ts
 │
-├── firebase.config.ts
-├── app-routing.ts
-└── app.config.ts
+├── environments/
+│   └── environment.ts
+│
+├── angular.json
+├── firebase.json
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 🔥 Conceptos aprendidos
+## 🔥 Best Practices Implemented
 
-Este proyecto practica:
+* Standalone Components
+* Reactive Forms
+* Route Guards
+* Service-based Architecture
+* Separation of Concerns
+* Dependency Injection
+* Authentication State Management
+* Firebase SDK Integration
+* Reusable Components
+* Strong Typing with TypeScript
+* Modular Project Organization
+* Scalable Angular Structure
 
-- Firebase Authentication
-- Route Guards
-- Protección de rutas
-- Social Providers
-- Reactive Forms
-- Angular Material
-- Observables
-- Authentication State
-- Standalone Components
+---
+
+## 🎯 Project Goal
+
+Practice and strengthen modern Angular authentication concepts through the implementation of a real-world authentication system:
+
+* Firebase Authentication
+* Route Guards
+* Reactive Forms
+* Social Login Providers
+* Authentication State
+* Angular Material
+* Dependency Injection
+* Standalone Components
+* TypeScript Best Practices
+* Front-End Architecture
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Proyecto educativo desarrollado para practicar autenticación moderna con Angular + Firebase.
+This project is intended for educational and portfolio purposes.
 
----
-```
+Created by **Alondra Francisco**.
