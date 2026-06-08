@@ -16,9 +16,9 @@ jobs:
 
       - run: npm install
 
-      - run: npx ng build --prod --base-href /angular-firebase-auth-material/
+      - run: npx ng build --configuration production --base-href /angular-firebase-auth-material/
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/angular-login-firebase-2
+          publish_dir: ./dist/angular-login-firebase-2/browser
